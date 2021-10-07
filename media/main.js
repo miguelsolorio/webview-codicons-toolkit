@@ -19,3 +19,9 @@ function handleHowdyClick() {
         text: "Hey there partner! 🤠",
     });
 }
+
+document.getElementById('basic-grid').rowsData = [
+    { Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data' },
+    { Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data' },
+    { Header1: 'Cell Data', Header2: 'Cell Data', Header3: 'Cell Data', Header4: 'Cell Data' },
+];

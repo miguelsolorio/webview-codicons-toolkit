@@ -106,8 +106,8 @@ export class HelloWorldPanel {
 
         const toolkitUri = getUri(webview, extensionUri, [
             "node_modules",
-            "@microsoft",
-            "vscode-webview-ui-toolkit",
+            "@vscode",
+            "webview-ui-toolkit",
             "dist",
             "toolkit.js",
         ]);
@@ -135,10 +135,81 @@ export class HelloWorldPanel {
             <body>
             <h1>Hello World!</h1>
 
+            <vscode-badge>1</vscode-badge>
+
+            <vscode-checkbox>Label</vscode-checkbox>
+
+
+
             <vscode-button>
                 Button Text
                 <span slot="start" class="codicon codicon-add"></span>
             </vscode-button>
+
+            <vscode-button appearance="primary">Button Text</vscode-button>
+            <vscode-button appearance="secondary">Button Text</vscode-button>
+            <vscode-button appearance="icon">
+                <span class="codicon codicon-check"></span>
+            </vscode-button>
+
+            <vscode-button autofocus>Button Text</vscode-button>
+
+            <vscode-button disabled>Button Text</vscode-button>
+
+            <vscode-divider></vscode-divider>
+
+            <vscode-panels aria-label="Default">
+            <vscode-panel-tab id="tab-1">PROBLEMS</vscode-panel-tab>
+            <vscode-panel-tab id="tab-2">OUTPUT</vscode-panel-tab>
+            <vscode-panel-tab id="tab-3">DEBUG CONSOLE</vscode-panel-tab>
+            <vscode-panel-tab id="tab-4">TERMINAL</vscode-panel-tab>
+            <vscode-panel-view id="view-1">
+                <vscode-data-grid id="basic-grid" aria-label="Default"></vscode-data-grid>
+            </vscode-panel-view>
+            <vscode-panel-view id="view-2">
+                Output Content
+            </vscode-panel-view>
+            <vscode-panel-view id="view-3">
+                Debug Console Content
+            </vscode-panel-view>
+            <vscode-panel-view id="view-4">
+                Terminal Content
+            </vscode-panel-view>
+        </vscode-panels>
+            
+
+
+            <vscode-button>
+                Button Text
+                <span slot="start" class="codicon codicon-add"></span>
+            </vscode-button>
+
+
+            <vscode-dropdown>
+                <vscode-option>Option Label #1</vscode-option>
+                <vscode-option>Option Label #2</vscode-option>
+                <vscode-option>Option Label #3</vscode-option>
+            </vscode-dropdown>
+
+            <vscode-dropdown>
+                <span slot="indicator" class="codicon codicon-chevron-down"></span>
+                <vscode-option>Option Label #1</vscode-option>
+                <vscode-option>Option Label #2</vscode-option>
+                <vscode-option>Option Label #3</vscode-option>
+            </vscode-dropdown>
+
+            <!-- Note: Using Visual Studio Code Codicon Library -->
+
+            <vscode-button appearance="icon">
+                <span class="codicon codicon-check"></span>
+            </vscode-button>
+
+            <vscode-text-field>Text Field Label</vscode-text-field>
+
+
+
+
+
             
             </body>
         </html>
