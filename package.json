@@ -40,8 +40,8 @@
     "@types/vscode": "^1.60.0",
     "@typescript-eslint/eslint-plugin": "^4.26.0",
     "@typescript-eslint/parser": "^4.26.0",
-    "@vscode/webview-ui-toolkit": "^0.8.1",
     "@vscode/codicons": "^0.0.22",
+    "@vscode/webview-ui-toolkit": "^0.8.1",
     "eslint": "^7.27.0",
     "glob": "^7.1.7",
     "mocha": "^8.4.0",
@@ -50,5 +50,8 @@
     "vscode-test": "^1.5.2",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0"
+  },
+  "dependencies": {
+    "tailwindcss": "^2.2.16"
   }
 }

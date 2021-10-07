@@ -120,6 +120,10 @@ export class HelloWorldPanel {
             "codicon.css",
         ]);
 
+        const tailwindUri = getUri(webview, extensionUri, [
+            "node_modules", "tailwindcss", "dist", "tailwind.css"
+        ]);
+
         // Tip: Install the es6-string-html VS Code extension to enable code highlighting below
         return /*html*/ `
         <!DOCTYPE html>
@@ -127,84 +131,93 @@ export class HelloWorldPanel {
             <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" type="text/css" href="${tailwindUri}">
             <link rel="stylesheet" href="${codiconStylesUri}">
             <script type="module" src="${toolkitUri}"></script>
             <script type="module" src="${mainUri}"></script>
             <title>Hello World!</title>
             </head>
             <body>
-            <h1>Hello World!</h1>
 
-            <vscode-badge>1</vscode-badge>
+                <div class="max-w-xl mx-auto">
+                    <h1 class="text-4xl">Webview Toolkit + Codicons + Tailwind CSS</h1>
 
-            <vscode-checkbox>Label</vscode-checkbox>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div><vscode-badge>1</vscode-badge></div>
+                        <vscode-checkbox>Label</vscode-checkbox>
+                    </div>
 
+                    
 
+                    <div class="flex items-center gap-4">
+                        <vscode-button>
+                            Button Text
+                            <span slot="start" class="codicon codicon-add"></span>
+                        </vscode-button>
 
-            <vscode-button>
-                Button Text
-                <span slot="start" class="codicon codicon-add"></span>
-            </vscode-button>
+                        <vscode-button appearance="primary">Button Text</vscode-button>
+                        <vscode-button appearance="secondary">Button Text</vscode-button>
+                        <vscode-button appearance="icon">
+                            <span class="codicon codicon-check"></span>
+                        </vscode-button>
+                        
+                    </div>
 
-            <vscode-button appearance="primary">Button Text</vscode-button>
-            <vscode-button appearance="secondary">Button Text</vscode-button>
-            <vscode-button appearance="icon">
-                <span class="codicon codicon-check"></span>
-            </vscode-button>
+                    
 
-            <vscode-button autofocus>Button Text</vscode-button>
+                    <vscode-divider></vscode-divider>
 
-            <vscode-button disabled>Button Text</vscode-button>
-
-            <vscode-divider></vscode-divider>
-
-            <vscode-panels aria-label="Default">
-            <vscode-panel-tab id="tab-1">PROBLEMS</vscode-panel-tab>
-            <vscode-panel-tab id="tab-2">OUTPUT</vscode-panel-tab>
-            <vscode-panel-tab id="tab-3">DEBUG CONSOLE</vscode-panel-tab>
-            <vscode-panel-tab id="tab-4">TERMINAL</vscode-panel-tab>
-            <vscode-panel-view id="view-1">
-                <vscode-data-grid id="basic-grid" aria-label="Default"></vscode-data-grid>
-            </vscode-panel-view>
-            <vscode-panel-view id="view-2">
-                Output Content
-            </vscode-panel-view>
-            <vscode-panel-view id="view-3">
-                Debug Console Content
-            </vscode-panel-view>
-            <vscode-panel-view id="view-4">
-                Terminal Content
-            </vscode-panel-view>
-        </vscode-panels>
-            
-
-
-            <vscode-button>
-                Button Text
-                <span slot="start" class="codicon codicon-add"></span>
-            </vscode-button>
+                    <vscode-panels aria-label="Default">
+                    <vscode-panel-tab id="tab-1">PROBLEMS</vscode-panel-tab>
+                    <vscode-panel-tab id="tab-2">OUTPUT</vscode-panel-tab>
+                    <vscode-panel-tab id="tab-3">DEBUG CONSOLE</vscode-panel-tab>
+                    <vscode-panel-tab id="tab-4">TERMINAL</vscode-panel-tab>
+                    <vscode-panel-view id="view-1">
+                        <vscode-data-grid id="basic-grid" aria-label="Default"></vscode-data-grid>
+                    </vscode-panel-view>
+                    <vscode-panel-view id="view-2">
+                        Output Content
+                    </vscode-panel-view>
+                    <vscode-panel-view id="view-3">
+                        Debug Console Content
+                    </vscode-panel-view>
+                    <vscode-panel-view id="view-4">
+                        Terminal Content
+                    </vscode-panel-view>
+                </vscode-panels>
 
 
-            <vscode-dropdown>
-                <vscode-option>Option Label #1</vscode-option>
-                <vscode-option>Option Label #2</vscode-option>
-                <vscode-option>Option Label #3</vscode-option>
-            </vscode-dropdown>
 
-            <vscode-dropdown>
-                <span slot="indicator" class="codicon codicon-chevron-down"></span>
-                <vscode-option>Option Label #1</vscode-option>
-                <vscode-option>Option Label #2</vscode-option>
-                <vscode-option>Option Label #3</vscode-option>
-            </vscode-dropdown>
+                    <vscode-button>
+                        Button Text
+                        <span slot="start" class="codicon codicon-add"></span>
+                    </vscode-button>
 
-            <!-- Note: Using Visual Studio Code Codicon Library -->
 
-            <vscode-button appearance="icon">
-                <span class="codicon codicon-check"></span>
-            </vscode-button>
+                    <vscode-dropdown>
+                        <vscode-option>Option Label #1</vscode-option>
+                        <vscode-option>Option Label #2</vscode-option>
+                        <vscode-option>Option Label #3</vscode-option>
+                    </vscode-dropdown>
 
-            <vscode-text-field>Text Field Label</vscode-text-field>
+                    <vscode-dropdown>
+                        <span slot="indicator" class="codicon codicon-chevron-down"></span>
+                        <vscode-option>Option Label #1</vscode-option>
+                        <vscode-option>Option Label #2</vscode-option>
+                        <vscode-option>Option Label #3</vscode-option>
+                    </vscode-dropdown>
+
+                    <!-- Note: Using Visual Studio Code Codicon Library -->
+
+                    <vscode-button appearance="icon">
+                        <span class="codicon codicon-check"></span>
+                    </vscode-button>
+
+                    <vscode-text-field>Text Field Label</vscode-text-field>
+                        
+
+                </div>
+                
 
 
 
